@@ -8,7 +8,6 @@ def display(a_transactions):
             name_dict[name] += int(points)
         else:
             name_dict[name] = int(points)
-    print(name_dict)                                    #print final dictionary
     return name_dict                                    #return final dictionary
 
 
@@ -41,6 +40,7 @@ with open("transactions.csv") as csvfile:
         transactions.append(row)
 
 a_transactions = sort_by_timestamp(transactions)                # Sort the transactions by timestamp 
+#print(a_transactions)                                          #uncomment this to see the transactions after being ordered by timestamp
 
 #fix initial file (remove and adjust all negative points)
 for j in range(len(a_transactions)-1,-1,-1):                    #get indices in reverse order
@@ -49,10 +49,11 @@ for j in range(len(a_transactions)-1,-1,-1):                    #get indices in 
         spend(i,points_out)                                     #call function to adjust points, start spending from oldest to newest
         a_transactions[j][1] = 0                                #set value of current transaction as 0
 
-#print(a_transactions)
+#print(a_transactions)                                          #uncomment this to see the transactions after adjusting for negative points
     
 #spend amount entered (after fixing the original file)
 points_out = int(input("Enter points"))                         #input from user; Enter number of point to be removed here
 spend(i,points_out)                                             #call function to adjust points after handling negative points
+#print(a_transactions)                                          #uncomment this to see the transactions after adjusting for points inputted
 
 display(a_transactions)                                         #call function to print final output dictionary
