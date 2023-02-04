@@ -1,0 +1,6 @@
+﻿payer,points,timestamp
+dannon,1000,2020-11-02T14:00:00Z
+unilever,200,2020-10-31T11:00:00Z
+dannon,-200,2020-10-31T15:00:00Z
+miller coors,10000,2020-11-01T14:00:00Z
+dannon,300,2020-10-31T10:00:00Z
