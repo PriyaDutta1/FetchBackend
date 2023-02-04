@@ -9,9 +9,9 @@ Fetch Backend Initial Screening Question on: https://docs.google.com/document/d/
 Click on the play button on the left of the cell to run this code![files](https://user-images.githubusercontent.com/124424840/216756545-162c6a36-7317-4fe9-8c4b-14aac31cf2f5.jpg)
 5. The output window of the notebook will now display a prompt to upload a file from your local device. Upload a csv file used for testing the program. The test file has to be titled "transactions.csv" for the program to run. Conversely, you could change the name of the csv file to the name of your test file on line 37 of program.py
 
-6. Next, open program.py on github and copy and paste the entire file (58 lines) into a new cell in the google colab notebook. You can open a new cell by clicking on "Code"(highlighten in the picture below)![input](https://user-images.githubusercontent.com/124424840/216756735-013ed39e-e516-4e8a-beff-d8c7e4cbade8.jpg)
+6. Next, open program.py on github and copy and paste the entire file (58 lines) into a new cell in the google colab notebook. You can open a new cell by clicking on "Code"(highlighted in the picture below)![input](https://user-images.githubusercontent.com/124424840/216756735-013ed39e-e516-4e8a-beff-d8c7e4cbade8.jpg)
 
-7. Now click on the play button beside the cell (highlighted above) in which program.py was pasted. The compiler will now tell you to enter the number of points to be deleted(int). Enter any integer and hit play again.![fina;](https://user-images.githubusercontent.com/124424840/216756778-4bbc16d3-18bd-4c3b-b729-1fe87a7a7416.jpg)
+7. Now click on the play button beside the cell (highlighted above) in which program.py was pasted. The compiler will now tell you to enter the number of points to be deleted(int). Enter any integer and hit play again or press enter on you keyboard.![fina;](https://user-images.githubusercontent.com/124424840/216756778-4bbc16d3-18bd-4c3b-b729-1fe87a7a7416.jpg)
 8. The output dictionary should be printed on your screen now
 
 
