@@ -34,7 +34,7 @@ transactions = []                                                #list to store 
 i=0                                                              #set first index input for recursive function
 
 # Read the CSV file and store transactions
-with open("transactions_example.csv") as csvfile:
+with open("transactions.csv") as csvfile:
     reader = csv.reader(csvfile)
     next(reader)                                                #skip the header row
     for row in reader:
