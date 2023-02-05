@@ -9,4 +9,4 @@
 
 # Assumptions
 1. I didn't quite understand how negative point values already in the csv file are supposed to be handled. Going by the example provided, I assumed that negative points were adjusted by removing the absolute value of the negative point from transactions older than the transaction with a negative point. So, the program removes all the negative points from the list first and then works on removing the points in putted
-2. The program isn't tested for all edge cases. It is also not fully optimized. Since the google doc said that the question was designed to take a few hours to complete, I figured in-depth testing and a 100% optimized code is not expected. (Current Runtime should be O(n), I haven't tried to reduce it any further)
+2. The program isn't tested for all edge cases (for example, it would break if the input csv had more points<0 than points>0). It is also not fully optimized. Since the google doc said that the question was designed to take a few hours to complete, I figured in-depth testing and a 100% optimized code is not expected. (Current runtime should be O(n), I haven't tried to reduce it any further)
