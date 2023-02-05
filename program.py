@@ -1,25 +1,36 @@
 import csv
 
 #function to print output dictionary
-def display(a_transactions):
-    name_dict = {}
-    for name, points, timestamp in a_transactions:
-        if name in name_dict:
-            name_dict[name] += int(points)
-        else:
-            name_dict[name] = int(points)
-    return name_dict                                    #return final dictionary
+def display(a_transactions,flag):
+    name_dict = {}                                            #dictionary to store output
+    if flag == 1:                                             #condition to print error statement
+        print("Error: Not enough points available")
+        return
+    else:
+        for name, points, timestamp in a_transactions:
+            if name in name_dict:
+                name_dict[name] += int(points)
+            else:
+                name_dict[name] = int(points)
+        print(name_dict)                                       #print final dictionary
+        return name_dict                                       #return final dictionary
 
 
 #recursive function to adjust points
 def spend(i,points_out):
+    global flag                                                 #flag to check for invalid input
+    flag = 0
     difference = points_out - int(a_transactions[i][1])         #points out - points stored
     if difference > 0:                                          #points out > points stored
         a_transactions[i][1] = 0                                #subtract all possiblepoints from current transaction
-        points_out = difference                                 # the difference is now new points_out
+        points_out = difference                                 #the difference is now new points_out
         i = i+1                                                 #go to the next value chronologically 
+        if (i==len(a_transactions)):                            #Base1: Stop if you run out of points to spend 
+            flag = 1 
+            return flag
+            
         spend(i,points_out)                                     #repeat until base condition is reached
-    elif difference <= 0:                                       #Base: If difference is not positive,
+    elif difference <= 0:                                       #Base2: If difference is not positive,
         a_transactions[i][1] = abs(difference)                  #set points of current transaction as absolute value of difference
         
 
@@ -40,7 +51,6 @@ with open("transactions.csv") as csvfile:
         transactions.append(row)
 
 a_transactions = sort_by_timestamp(transactions)                # Sort the transactions by timestamp 
-#print(a_transactions)                                          #uncomment this to see the transactions after being ordered by timestamp
 
 #fix initial file (remove and adjust all negative points)
 for j in range(len(a_transactions)-1,-1,-1):                    #get indices in reverse order
@@ -49,11 +59,10 @@ for j in range(len(a_transactions)-1,-1,-1):                    #get indices in 
         spend(i,points_out)                                     #call function to adjust points, start spending from oldest to newest
         a_transactions[j][1] = 0                                #set value of current transaction as 0
 
-#print(a_transactions)                                          #uncomment this to see the transactions after adjusting for negative points
+#print(a_transactions)
     
 #spend amount entered (after fixing the original file)
 points_out = int(input("Enter points"))                         #input from user; Enter number of point to be removed here
 spend(i,points_out)                                             #call function to adjust points after handling negative points
-#print(a_transactions)                                          #uncomment this to see the transactions after adjusting for points inputted
 
-display(a_transactions)                                         #call function to print final output dictionary
+display(a_transactions, flag)                                         #call function to print final output dictionary
